@@ -11,6 +11,9 @@ on:
       - synchronize
       - labeled
 
+permissions:
+  pull-requests: read
+
 jobs:
   lint-java:
     # when using pull_request_target, all jobs MUST have this if check for 'ok-to-test' or 'approved' for security purposes.
@@ -27,6 +30,7 @@ jobs:
           # code from the PR.
           ref: refs/pull/${{ github.event.pull_request.number }}/merge
           submodules: recursive
+          persist-credentials: false
       - name: Lint java
         run: make lint-java
 
@@ -46,6 +50,7 @@ jobs:
           # code from the PR.
           ref: refs/pull/${{ github.event.pull_request.number }}/merge
           submodules: recursive
+          persist-credentials: false
       - name: Set up JDK 11
         uses: actions/setup-java@v1
         with:
@@ -88,6 +93,7 @@ jobs:
       - uses: actions/checkout@v4
         with:
           submodules: 'true'
+          persist-credentials: false
       - name: Setup Python
         uses: actions/setup-python@v5
         id: setup-python
@@ -124,6 +130,7 @@ jobs:
           # code from the PR.
           ref: refs/pull/${{ github.event.pull_request.number }}/merge
           submodules: recursive
+          persist-credentials: false
       - name: Set up JDK 11
         uses: actions/setup-java@v1
         with:
