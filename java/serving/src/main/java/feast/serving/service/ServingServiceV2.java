@@ -18,6 +18,10 @@ package feast.serving.service;
 
 import feast.proto.serving.ServingAPIProto;
 
+
+/**
+ * FeatureService by different entity indexing.
+ */
 public interface ServingServiceV2 {
   /**
    * Get information about the Feast serving deployment.

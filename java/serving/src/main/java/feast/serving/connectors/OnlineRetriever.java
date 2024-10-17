@@ -21,6 +21,9 @@ import feast.proto.types.ValueProto;
 import java.util.List;
 import java.util.Map;
 
+/**
+ * FeatureStore by Same Entity Indexing
+ */
 public interface OnlineRetriever {
   /**
    * Get online features for the given entity rows using data retrieved from the Feature references

@@ -24,6 +24,7 @@ option java_outer_classname = "RedisProto";
 option java_package = "feast.proto.storage";
 option go_package = "github.com/feast-dev/feast/go/protos/feast/storage";
 
+// [N, N,,, ] => N * [1, 1,,,]
 message RedisKeyV2 {
   string project = 1;
 
